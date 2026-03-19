@@ -243,31 +243,40 @@ export default function Orb({
     let currentRot = 0;
     const rotationSpeed = 0.3;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    // `Orb.css` disables pointer-events so the orb won't block clicks; to keep the orb reactive,
+    // we track pointer movement globally and derive "hover" from the orb container bounds.
+    const updateHoverFromClientPosition = (clientX: number, clientY: number) => {
       const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+
       const width = rect.width;
       const height = rect.height;
       const size = Math.min(width, height);
+      if (!size) {
+        targetHover = 0;
+        return;
+      }
+
       const centerX = width / 2;
       const centerY = height / 2;
       const uvX = ((x - centerX) / size) * 2.0;
       const uvY = ((y - centerY) / size) * 2.0;
 
-      if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
-        targetHover = 1;
-      } else {
-        targetHover = 0;
-      }
+      targetHover = Math.sqrt(uvX * uvX + uvY * uvY) < 0.8 ? 1 : 0;
     };
 
-    const handleMouseLeave = () => {
-      targetHover = 0;
+    const handlePointerMove = (e: PointerEvent) => updateHoverFromClientPosition(e.clientX, e.clientY);
+    const handleMouseMove = (e: MouseEvent) => updateHoverFromClientPosition(e.clientX, e.clientY);
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      updateHoverFromClientPosition(touch.clientX, touch.clientY);
     };
 
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     let rafId: number;
     const update = (t: number) => {
@@ -295,8 +304,9 @@ export default function Orb({
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("resize", resize);
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
       if (gl.canvas.parentNode === container) {
         container.removeChild(gl.canvas);
       }
