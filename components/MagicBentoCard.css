@@ -1,0 +1,60 @@
+.magic-bento-card {
+  position: relative;
+  overflow: hidden;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+}
+
+.magic-bento-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    var(--mb-glow-radius, 240px) circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(var(--mb-glow-rgb, 0, 153, 175), calc(var(--glow-intensity, 0) * 0.55)) 0%,
+    rgba(var(--mb-glow-rgb, 0, 153, 175), calc(var(--glow-intensity, 0) * 0.25)) 28%,
+    transparent 60%
+  );
+  opacity: 1;
+  z-index: 0;
+}
+
+.magic-bento-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mb-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(var(--mb-glow-rgb, 0, 153, 175), 0.95);
+  box-shadow: 0 0 8px rgba(var(--mb-glow-rgb, 0, 153, 175), 0.6);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-name: mbParticleFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mbParticleFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(0px, 0px) scale(0.8);
+    filter: blur(0px);
+  }
+  20% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--mb-pdx, 0px), var(--mb-pdy, 0px)) scale(1.2);
+    filter: blur(0.4px);
+  }
+}
+
