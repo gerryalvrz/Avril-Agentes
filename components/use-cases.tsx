@@ -66,7 +66,7 @@ export function UseCases() {
           Built for every type of operator.
         </h2>
         <p className="mt-4 text-muted-foreground text-lg max-w-2xl leading-relaxed text-pretty">
-          Whether you run a startup, an agency, or a solo practice — Agentbase adapts to your model, not the other way around.
+          Whether you run a startup, an agency, or a solo practice — Agentic Business OS adapts to your model, not the other way around.
         </p>
 
         <div className="mt-14 h-[540px] overflow-hidden flex items-center justify-center relative">

@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function FooterCTA() {
   return (
@@ -96,9 +97,9 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <LogoMark />
-              <span className="text-sm font-semibold text-foreground">Agentbase</span>
+              <span className="text-sm font-semibold text-foreground">Agentic Business OS</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-[200px]">
               Customizable AI agent teams for businesses and professionals. Deploy, scale, operate.
@@ -129,7 +130,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Agentbase, Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Agentic Business OS. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">Built for operators who execute.</p>
         </div>
@@ -140,11 +141,12 @@ export function Footer() {
 
 function LogoMark() {
   return (
-    <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="9" height="9" rx="2" fill="currentColor" opacity="1" />
-      <rect x="12" y="1" width="9" height="9" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="1" y="12" width="9" height="9" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="12" y="12" width="9" height="9" rx="2" fill="currentColor" opacity="0.25" />
-    </svg>
+    <Image
+      src="/Avril.png"
+      alt="Avril logo"
+      width={88}
+      height={55}
+      className="h-9 w-auto object-contain"
+    />
   );
 }

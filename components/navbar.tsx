@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Use Cases", href: "#use-cases" },
@@ -18,10 +19,10 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
+        <a href="#" className="flex items-center gap-1 shrink-0">
           <LogoMark />
           <span className="text-foreground font-semibold tracking-tight text-sm">
-            Agentbase
+            Agentic Business OS
           </span>
         </a>
 
@@ -92,11 +93,13 @@ export function Navbar() {
 
 function LogoMark() {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="1" y="1" width="9" height="9" rx="2" fill="currentColor" opacity="1" />
-      <rect x="12" y="1" width="9" height="9" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="1" y="12" width="9" height="9" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="12" y="12" width="9" height="9" rx="2" fill="currentColor" opacity="0.25" />
-    </svg>
+    <Image
+      src="/Avril.png"
+      alt="Avril logo"
+      width={96}
+      height={60}
+      className="h-10 w-auto object-contain"
+      priority
+    />
   );
 }

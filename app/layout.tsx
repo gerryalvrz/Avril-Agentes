@@ -10,8 +10,8 @@ const inter = Inter({
 const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
-  title: 'Agentbase — Deploy Your AI Team',
-  description: 'Build and deploy customizable AI agent teams for your business. Private workspaces, managed deployment, and specialized agents for every function.',
+  title: 'Agentic Business OS',
+  description: 'Agentic Business OS helps you deploy customizable AI agent teams for your business with private workspaces and flexible deployment models.',
   generator: 'v0.app',
   icons: {
     icon: [

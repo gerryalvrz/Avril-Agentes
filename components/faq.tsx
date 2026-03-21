@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "Can this work for solo professionals?",
-    a: "Absolutely. The Starter plan is designed for independent consultants, advisors, and solo operators. You can start with two or three agents and scale as your workload grows. Many solo professionals use Agentbase as their own back-office team.",
+    a: "Absolutely. The Starter plan is designed for independent consultants, advisors, and solo operators. You can start with two or three agents and scale as your workload grows. Many solo professionals use Agentic Business OS as their own back-office team.",
   },
   {
     q: "Can humans stay in the loop?",
