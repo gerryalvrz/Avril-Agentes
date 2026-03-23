@@ -33,27 +33,20 @@ export function FooterCTA() {
         </div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight text-balance leading-tight">
-          Deploy your AI team.
+          Vibe to Ignition.
         </h2>
 
         <p className="text-lg text-muted-foreground max-w-lg leading-relaxed text-pretty">
-          Talk to our team about your workflow, your goals, and the agents that
-          make sense for your operation. No pressure, no demo theater.
+          From interview to orchestration in minutes. Your own business operating system powered by OpenClaw and Human.tech identity.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <a
-            href="mailto:hello@agentbase.ai"
-            className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground font-medium text-sm px-8 py-3.5 hover:bg-primary/90 transition-colors"
+            href="https://app.avril.life"
+            className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground font-medium text-sm px-8 py-3.5 hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(var(--brand-rgb),0.3)]"
           >
-            Book a Demo
+            Get Started
             <ArrowRight size={15} />
-          </a>
-          <a
-            href="#pricing"
-            className="inline-flex items-center gap-2 rounded-md border border-border bg-surface text-foreground font-medium text-sm px-8 py-3.5 hover:bg-surface-raised transition-colors"
-          >
-            View Plans
           </a>
         </div>
       </div>
@@ -65,10 +58,9 @@ const FOOTER_LINKS = [
   {
     title: "Product",
     links: [
-      { label: "Use Cases", href: "#use-cases" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Agents", href: "#agents" },
-      { label: "Deployment", href: "#" },
+      { label: "Vibe Founding", href: "#" },
+      { label: "Architecture", href: "#" },
+      { label: "Founder Identity", href: "#" },
     ],
   },
   {
@@ -76,8 +68,6 @@ const FOOTER_LINKS = [
     links: [
       { label: "About", href: "#" },
       { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#contact" },
     ],
   },
   {
@@ -85,7 +75,6 @@ const FOOTER_LINKS = [
     links: [
       { label: "Privacy Policy", href: "#" },
       { label: "Terms of Service", href: "#" },
-      { label: "Security", href: "#" },
     ],
   },
 ];
@@ -102,7 +91,7 @@ export function Footer() {
               <span className="text-sm font-semibold text-foreground">Agentic Business OS</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed max-w-[200px]">
-              Customizable AI agent teams for businesses and professionals. Deploy, scale, operate.
+              The orchestration layer for the modern vibe founder. Ideation, architecture, and deployment in one flow.
             </p>
           </div>
 
