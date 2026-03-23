@@ -5,11 +5,9 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Use Cases", href: "#use-cases" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Agents", href: "#agents" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Vibe Founding", href: "#" },
+  { label: "Architecture", href: "#" },
+  { label: "Founder Identity", href: "#" },
 ];
 
 export function Navbar() {
@@ -42,16 +40,10 @@ export function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#pricing"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Sign in
-          </a>
-          <a
-            href="#contact"
+            href="https://app.avril.life"
             className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground text-sm font-medium px-4 py-2 hover:bg-primary/90 transition-colors"
           >
-            Book a Demo
+            Get Started
           </a>
         </div>
 
@@ -79,11 +71,11 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://app.avril.life"
             onClick={() => setOpen(false)}
             className="inline-flex justify-center items-center rounded-md bg-primary text-primary-foreground text-sm font-medium px-4 py-2 hover:bg-primary/90 transition-colors mt-2"
           >
-            Book a Demo
+            Get Started
           </a>
         </div>
       )}

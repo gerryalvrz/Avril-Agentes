@@ -1,5 +1,5 @@
 import { ArrowRight, ChevronRight } from "lucide-react";
-import { DashboardMockup } from "./dashboard-mockup";
+import { AnimatedAiChat } from "./ui/animated-ai-chat";
 import { HeroGridDots } from "./hero-grid-dots";
 import TrueFocus from "./TrueFocus";
 
@@ -34,15 +34,15 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
             <span className="text-xs text-muted-foreground font-medium tracking-wide">
-              Platform-as-a-Service · Managed Deployment
+              The Vibe Founder's Operating System
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground text-balance leading-[1.05]">
-            Deploy your own <br className="hidden sm:block" />
+          <h1 className="text-5xl md:text-6xl font-heading lg:text-7xl font-semibold tracking-tight text-foreground text-balance leading-[1.05]">
+            Vibe to Ignition → <br className="hidden sm:block" />
             <TrueFocus
-              sentence="AI team."
+              sentence="live agent orchestration"
               manualMode
               blurAmount={0}
               borderColor="#0099af"
@@ -55,32 +55,23 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg text-muted-foreground max-w-2xl text-pretty leading-relaxed">
-            Build a fully customized roster of AI agents — each with a dedicated
-            role, specialized workflow, and private workspace. Built for businesses,
-            founders, agencies, and independent professionals who operate at scale.
+            The orchestration layer for the modern vibe founder. Convert agent briefs into live OpenClaw instances with 3-swarm guardrails. From Avril interview to Convex architecture, powered by Human.tech identity.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
             <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground font-medium text-sm px-6 py-3 hover:bg-primary/90 transition-colors"
+              href="https://app.avril.life"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary text-primary-foreground font-semibold text-base px-10 py-4 hover:bg-primary/90 transition-all shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_oklch(0.62_0.14_210_/_0.3)] hover:-translate-y-0.5 active:translate-y-0 hover:shadow-[0_25px_50px_rgba(0,0,0,0.5),0_0_30px_oklch(0.62_0.14_210_/_0.4)]"
             >
-              Book a Demo
-              <ArrowRight size={15} />
-            </a>
-            <a
-              href="#use-cases"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-surface text-foreground font-medium text-sm px-6 py-3 hover:bg-surface-raised transition-colors"
-            >
-              Explore Use Cases
-              <ChevronRight size={15} className="text-muted-foreground" />
+              Get Started
+              <ArrowRight size={18} />
             </a>
           </div>
         </div>
 
         {/* Dashboard Mockup */}
-        <div className="mt-16 relative mx-auto max-w-5xl">
+        <div className="mt-16 relative mx-auto max-w-4xl">
           {/* Glow beneath the mockup */}
           <div
             aria-hidden="true"
@@ -91,7 +82,7 @@ export function Hero() {
             }}
           />
           <div className="relative rounded-xl border border-border/70 overflow-hidden shadow-2xl">
-            <DashboardMockup />
+            <AnimatedAiChat />
           </div>
         </div>
       </div>
